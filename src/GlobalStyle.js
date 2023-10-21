@@ -36,7 +36,8 @@ img {
     display: block;
 }
 
-a {
+a
+ {
     text-decoration: none;
 }
 

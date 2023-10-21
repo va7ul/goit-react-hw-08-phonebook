@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { GlobalStyle } from 'GlobalStyle';
 import { ContactForm } from 'components/ContactForm/ContactForm.jsx';
 import { ContactList } from 'components/ContactList/ContactList.jsx';
 import { Filter } from 'components/Filter/Filter.jsx';
@@ -24,7 +23,6 @@ const ContactsPage = () => {
       <Filter />
       {isLoading && !error && <b>Request in progress...</b>}
       <ContactList />
-      <GlobalStyle />
     </div>
   );
 };

@@ -4,13 +4,23 @@ import { AuthNav } from 'components/AuthNav/AuthNav';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import { Navigation } from 'components/Navigation/Navigation';
 
-export const AppBar = () => {
+import Toolbar from '@mui/material/Toolbar';
+import { CustomAppBar, CustomBox, CustomStack } from './AppBar.styled';
+
+export const MenuAppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
-    <>
-      <Navigation />
-      {isLoggedIn ? <UserMenu /> : <AuthNav />}
-    </>
+    <CustomBox sx={{ flexGrow: 1 }}>
+      <CustomAppBar position="static">
+        <Toolbar>
+          <CustomStack>
+            <Navigation />
+            <h1>PHONEBOOK</h1>
+            {isLoggedIn ? <UserMenu /> : <AuthNav />}
+          </CustomStack>
+        </Toolbar>
+      </CustomAppBar>
+    </CustomBox>
   );
 };
